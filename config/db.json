@@ -1,0 +1,114 @@
+{
+  "services": [
+    {
+      "id": "2",
+      "title": "Dental Cleaning",
+      "category": "Cardiology",
+      "price": "100",
+      "description": "Professional teeth cleaning",
+      "status": "active"
+    },
+    {
+      "title": "Checkup",
+      "category": "Cardiology",
+      "price": "50",
+      "description": "this is test",
+      "status": "active",
+      "id": "N6wk6Lh2-bs"
+    },
+    {
+      "title": "test",
+      "category": "Dermatology",
+      "price": "25",
+      "description": "this is test description",
+      "status": "active",
+      "id": "hi5PmIieyHo"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "patientNumber": "1",
+      "patientName": "John Doe",
+      "visitType": "walk-in",
+      "serviceType": "Consultation",
+      "time": "09:30 AM",
+      "status": "completed",
+      "paymentType": "cash",
+      "paymentStatus": "paid"
+    },
+    {
+      "id": "2",
+      "patientNumber": "2",
+      "patientName": "Jane Smith",
+      "visitType": "visita",
+      "serviceType": "Follow-up",
+      "time": "11:00 AM",
+      "status": "waiting",
+      "paymentType": "credit",
+      "paymentStatus": "paid"
+    },
+    {
+      "id": "3",
+      "patientNumber": "3",
+      "patientName": "Emily Johnson",
+      "visitType": "walk-in",
+      "serviceType": "Checkup",
+      "time": "02:15 PM",
+      "status": "completed",
+      "paymentType": "insurance",
+      "paymentStatus": "paid"
+    },
+    {
+      "id": "4",
+      "patientNumber": "4",
+      "patientName": "Michael Lee",
+      "visitType": "visita",
+      "serviceType": "Vaccination",
+      "time": "03:45 PM",
+      "status": "canceled",
+      "paymentType": "cash",
+      "paymentStatus": "unpaid"
+    },
+    {
+      "visitType": "scheduled",
+      "time": "20:30",
+      "patientName": "omar",
+      "serviceType": "Dental Cleaning",
+      "phone": "01061989116",
+      "status": "not-shown",
+      "paymentType": "cash",
+      "paymentStatus": "unpaid",
+      "notes": "viseta",
+      "id": "dDp9Bol-oak"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Katrina Murphy",
+      "email": "katrina@example.com",
+      "password": "123456",
+      "phone": "555-1234",
+      "role": "admin",
+      "status": "active",
+      "addDate": "March 21, 2013",
+      "lastActive": "July 14, 2015",
+      "avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+      "description": "Operation Test"
+    },
+    {
+      "name": "Omer mohamed",
+      "email": "omergehad593@gmail.com",
+      "password": "12345678",
+      "phone": "012345678",
+      "role": "admin",
+      "status": "active",
+      "description": "doctor",
+      "avatar": "https://randomuser.me/api/portraits/lego/1.jpg",
+      "addDate": "July 4, 2026",
+      "id": "uuUIHOfFipA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
