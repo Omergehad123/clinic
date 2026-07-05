@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }) {
             <main className="">
                 <DashboardHeader onToggleSidebar={toggleSidebar} />
 
-                <div className="w-full  flex gap-5 relative">
+                <div className="w-full min-h-screen flex gap-5 relative">
                     {/* Overlay for mobile */}
                     {sidebarOpen && (
                         <div

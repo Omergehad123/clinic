@@ -1,5 +1,4 @@
 import { FaBell, FaSearch, FaUserCircle, FaBars } from "react-icons/fa";
-import ThemeBtn from "../../components/ui/ThemeBtn";
 
 function DashboardHeader({ onToggleSidebar }) {
     return (
@@ -32,7 +31,6 @@ function DashboardHeader({ onToggleSidebar }) {
 
             {/* Right: actions */}
             <div className="flex items-center gap-3 sm:gap-5 text-(--text-color)">
-                <ThemeBtn className="cursor-pointer" />
                 <FaBell className="text-xl cursor-pointer" />
                 <div className="flex items-center gap-2">
                     <FaUserCircle className="text-(--text-color) text-2xl" />

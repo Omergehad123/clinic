@@ -62,3 +62,15 @@ body {
 .animate-popIn {
   animation: popIn 0.25s ease-out;
 }
+
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+}

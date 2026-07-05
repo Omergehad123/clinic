@@ -9,32 +9,21 @@ import { FaArrowLeft, FaArrowRight, FaFileAlt, FaRegTrashAlt, FaUser, FaTimes } 
 import { IoIosNotifications, IoMdSettings } from "react-icons/io";
 import { useState } from "react";
 
-/**
- * Sidebar behaviour:
- *  - Desktop (md+): always visible, can collapse to icon-only via its own toggle arrow
- *  - Mobile (<md):  hidden by default, slides in as a fixed overlay when sidebarOpen=true
- *                   (sidebarOpen is controlled from the layout via the hamburger in the header)
- */
 function Sidebar({ sidebarOpen, onClose }) {
-    // Desktop collapse state (independent from mobile open state)
     const [collapsed, setCollapsed] = useState(false);
-
-    // On desktop the sidebar shows when mounted; show labels when not collapsed
     const showLabels = !collapsed;
 
     return (
         <>
-            {/* ── MOBILE SIDEBAR (fixed overlay, slide-in) ─────────────────── */}
             <aside
                 className={`
-                    fixed top-0 left-0 z-30 h-screen w-64 p-4
+                    fixed top-0 left-0 z-9990 h-screen w-64 p-4
                     bg-(--main-color) shadow-2xl
                     transform transition-transform duration-300 ease-in-out
                     lg:hidden
                     ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
                 `}
             >
-                {/* Close button */}
                 <div className="flex justify-between items-center mb-4">
                     <span className="text-(--text-color) font-semibold text-lg">Menu</span>
                     <button
@@ -49,7 +38,6 @@ function Sidebar({ sidebarOpen, onClose }) {
                 <SidebarLinks showLabels={true} onLinkClick={onClose} />
             </aside>
 
-            {/* ── DESKTOP SIDEBAR (static, collapsible) ────────────────────── */}
             <aside
                 className={`
                     hidden lg:flex flex-col
@@ -57,7 +45,6 @@ function Sidebar({ sidebarOpen, onClose }) {
                     transition-all duration-300 h-screen p-4 relative shrink-0
                 `}
             >
-                {/* Collapse / expand arrow */}
                 <button
                     onClick={() => setCollapsed((c) => !c)}
                     aria-label="Toggle sidebar width"
@@ -72,7 +59,6 @@ function Sidebar({ sidebarOpen, onClose }) {
     );
 }
 
-/** Shared link list rendered inside both the mobile & desktop sidebars */
 function SidebarLinks({ showLabels, onLinkClick }) {
     return (
         <ul className="flex flex-col gap-2 mt-2">
@@ -88,8 +74,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Services */}
             <li className="relative">
                 <Link
                     href="/dashboard/Services"
@@ -102,8 +86,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Appointments */}
             <li className="relative">
                 <Link
                     href="/dashboard/Appointments"
@@ -116,19 +98,15 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Users group */}
             <SidebarGroup
                 showMenu={showLabels}
                 icon={PiUsersFourFill}
                 label="Users"
-                links={["/dashboard/Users", "/dashboard/Users/new", "/dashboard/Users/roles"]}
+                links={["/dashboard/Users", "/dashboard/Users/new"]}
             >
                 <SidebarLink href="/dashboard/Users" label="Users" onClick={onLinkClick} />
-                <SidebarLink href="/dashboard/Users/roles" label="Manage Roles" onClick={onLinkClick} />
+                <SidebarLink href="/dashboard/Users/new" label="Add new user" onClick={onLinkClick} />
             </SidebarGroup>
-
-            {/* Patients group */}
             <SidebarGroup
                 showMenu={showLabels}
                 icon={PiUsersFourFill}
@@ -138,8 +116,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                 <SidebarLink href="/dashboard/Patients" label="Patients" onClick={onLinkClick} />
                 <SidebarLink href="/dashboard/Patients/new" label="Add Patients" onClick={onLinkClick} />
             </SidebarGroup>
-
-            {/* Prescriptions group */}
             <SidebarGroup
                 showMenu={showLabels}
                 icon={FaFileAlt}
@@ -149,8 +125,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                 <SidebarLink href="/dashboard/Prescriptions" label="Prescriptions" onClick={onLinkClick} />
                 <SidebarLink href="/dashboard/Prescriptions/new" label="Add Prescriptions" onClick={onLinkClick} />
             </SidebarGroup>
-
-            {/* Notifications */}
             <li className="relative">
                 <Link
                     href="/dashboard/Notifications"
@@ -163,8 +137,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Settings */}
             <li className="relative">
                 <Link
                     href="/dashboard/Settings"
@@ -177,8 +149,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Profile */}
             <li className="relative">
                 <Link
                     href="/dashboard/Profile"
@@ -191,8 +161,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Activity */}
             <li className="relative">
                 <Link
                     href="/dashboard/Activity"
@@ -205,8 +173,6 @@ function SidebarLinks({ showLabels, onLinkClick }) {
                     </span>
                 </Link>
             </li>
-
-            {/* Trash */}
             <li className="relative">
                 <Link
                     href="/dashboard/Trash"

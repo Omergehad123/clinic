@@ -110,5 +110,79 @@
       "id": "uuUIHOfFipA"
     }
   ],
+  "patients": [
+    {
+        "id": "1",
+        "fullName": "John Doe",
+        "phone": "555-1234",
+        "gender": "male",
+        "dob": "1992-03-15",
+        "age": 32,
+        "address": "123 Main St, Cityville",
+        "allergies": ["Penicillin", "Peanuts"],
+        "chronicDiseases": ["Hypertension"],
+        "currentMedications": ["Lisinopril 10mg"],
+        "notes": "Patient prefers morning appointments.",
+        "status": "active",
+        "registrationDate": "March 10, 2024",
+        "lastVisit": "2024-06-10",
+        "nextAppointment": "2024-07-15",
+        "totalVisits": 5,
+        "totalPaid": 350,
+        "outstandingBalance": 50
+    },
+    {
+        "id": "2",
+        "fullName": "Jane Smith",
+        "phone": "555-5678",
+        "gender": "female",
+        "dob": "1995-07-22",
+        "age": 28,
+        "address": "456 Oak Ave, Townsburg",
+        "allergies": [],
+        "chronicDiseases": [],
+        "currentMedications": [],
+        "notes": "",
+        "status": "active",
+        "registrationDate": "April 5, 2024",
+        "lastVisit": "2024-05-29",
+        "nextAppointment": null,
+        "totalVisits": 2,
+        "totalPaid": 120,
+        "outstandingBalance": 0
+    }
+  ],
+  "prescriptions": [
+    {
+        "id": "RX-001",
+        "patientId": "1",
+        "patientName": "John Doe",
+        "patientPhone": "555-1234",
+        "doctor": "Dr. Smith",
+        "diagnosis": "Upper Respiratory Infection",
+        "chiefComplaint": "Sore throat, fever for 3 days",
+        "notes": "Patient advised to rest and drink fluids.",
+        "prescriptionDate": "2024-07-01",
+        "followUpDate": "2024-07-10",
+        "status": "active",
+        "medications": [
+            {
+                "id": "m1",
+                "name": "Amoxicillin",
+                "dosage": "500mg",
+                "frequency": "Twice daily",
+                "duration": "7 days",
+                "instructions": "After food",
+                "quantity": "14"
+            }
+        ],
+        "additionalInstructions": "Avoid cold drinks. Rest for 3 days.",
+        "attachments": [],
+        "timeline": [
+            { "action": "Prescription Created", "date": "2024-07-01", "time": "10:30 AM" }
+        ],
+        "createdAt": "2024-07-01"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
